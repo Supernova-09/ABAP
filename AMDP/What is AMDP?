@@ -1,1 +1,16 @@
+ABAP Managed Database Procedure 
+
+SAP has developed techniques like CDS View or AMDP to solve the performance issues of old ABAP programing concept like fetching data from the database and performing all calculations on application layer. In CDS In AMDP we can make use of Code Push Down concept to perform our calculation at DB layer instead of on application server, which reduces the program execution time. 
+
+AMDP is a Database Procedure which is managed by ABAP. We can write code inside AMDP by using SQLSCRIPT which is a database language, which is easy to understand and code.  After Coding logic inside AMDP method, we can consume it in ABAP report or use AMDP same as delegate method in CDS table function. 
+
+AMDPs are created as a method of global classes. You can create the AMDP class as static or instance in visibility section. It can be public, private, protected. 
+
+When using AMDP, we need to add interface IF_AMDP_MARKER_HDB, if we don’t add it, we can’t use any features of AMDP method. 
+We can create our class method for AMDP using exporting, importing, and changing parameters. Returning parameters is not allowed. 
+
+AMDP method parameters must be pass by value, then parameters must be scalar types or table types. Scalar types are integer, char, etc. We cannot use deep structure. 
+
+The AMDP method must use the “BY DATABASE PROCEDURE FOR HDB LANGUAGE SQL SCRIPT “ after its name in the class implementation section. 
+
 
